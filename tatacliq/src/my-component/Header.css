@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#body {
+    width: 100%;
+    background-color: #212121;
+    height: 100px;
+    display: flex;
+    position: fixed;
+}
+
+.logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo>img {
+    height: 59px;
+    margin: 8%;
+}
+
+.menus {
+    width: 80%;
+}
+
+.heading-divider1 {
+    width: 100%;
+    height: 40%;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-around;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.tata-cliq-luxary {
+    width: 48%;
+    color: #fff;
+}
+
+.tata-cliq-menu {
+    display: flex;
+    width: 48%;
+    color: #fff;
+}
+
+.heading-padding {
+    width: 16%;
+    text-align: center;
+}
+
+.heading-padding1 {
+    width: 24%;
+    text-align: center;
+}
+
+.heading-divider2 {
+    width: 100%;
+    display: flex;
+}
+
+.search-category-product {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category {
+    width: 15%;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.category:hover{
+    width: 15%;
+    color: black;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #fff;
+
+}
+
+.brands {
+    width: 12%;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.brands:hover{
+    width: 12%;
+    color: black;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #fff;
+
+}
+
+.searchbar-div {
+    width: 69%;
+    height: 42px;
+    margin-top: 9px;
+    border-radius: 5px;
+    background-color: #4a4a4a;
+    border: 1px solid #4a4a4a;
+    display: flex;
+}
+
+.emoji-search{
+    font-size: 20px;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg enable-background='new 0 0 50 50' height='50px' id='Layer_1' version='1.1' viewBox='0 0 50 50' width='50px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Crect fill='none' height='50' width='50'/%3E%3Ccircle cx='21' cy='20' fill='none' r='16' stroke='%23000000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'/%3E%3Cline fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='4' x1='32.229' x2='45.5' y1='32.229' y2='45.5'/%3E%3C/svg%3E");
+}
+
+.icon-color{
+    color: #fff;
+    width: 7%;
+    padding-top: 9px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.searchbar-div>input:nth-child(2){
+    width: 93%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: #4a4a4a;
+}
+
+.icon-heart{
+    width: 25%;
+    color: #fff;
+    display: flex;
+    padding-top: 8%;
+    justify-content: space-around;
+}
+
+.icon-shopping{
+    width: 25%;
+    color: #fff;
+    display: flex;
+    padding-top: 8%;
+    justify-content: space-around;
+}
+
+/* color = #4a4a4a */
+
+.wishlist-cart {
+    display: flex;
+    width: 20%;
+    color: #fff;
+}
+
+.arrow {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow:hover {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }

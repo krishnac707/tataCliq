@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-body{
+    padding-top: 100px;
+    background-color: #ececec;
+}
+
+.slider-image{
+    width: 100%;
+}
+
+.slider-image>img{
+    width: 100%;
+}
+
+.allItems{
+    width: 100%;
+    margin-top: -4px;
+    justify-content: space-around;
+    display: flex;
+}
+
+.image-size{
+    width: 9%;
+}
+
+
+.bank-card-offer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
+
+.diff-bank-offer{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icici-offer-div{
+    width: 49%;
+    padding-top: 2%;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 4px;
+    /* justify-content; */
+}
+
+.icici-offer{
+    width: 80%;
+    border: 1px solid #fff;
+}
+
+.hdfc-offer-div{
+    width: 49%;
+    padding-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 4px;
+
+}
+
+.hdfc-offer{
+    width: 81%;
+    border: 1px solid #fff;
+}
+
+.mid-day{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8%;
+}
+
+.mid-day>img{
+    width: 22%;
+}
+
+.mid-day1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8%;
+    padding-top: 4%;
+}
+
+.mid-day1>img{
+    width: 22%;
+}
+
+
+.mens-product{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mens-product1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4%;
+}
+
+.miday-product-all{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.miday-images{
+    width: 24%;
+    transition: 400ms; 
+}
+
+.miday-images:hover{
+    transform: scale(1.1);
+}

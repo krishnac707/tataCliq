@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer-body{
+    width: 100%;
+}
+
+.trustDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -1%;
+}
+
+.policy-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -19px;
+    margin-bottom: 4%;
+}
+
+.footer-div{
+    width: 90%;
+    display: flex;
+    padding-left: 5%;
+    margin-bottom: 5%;
+}
+
+.footer-all-div{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tata-market-place{
+    width: 25%;
+}
+
+.tata-customer-service{
+    width: 25%;
+}
+
+.tata-cliq-div{
+    width: 25%;
+}
+
+.blank-footer-div{
+    width: 50%;
+}
+
+.margin-between{
+    margin-bottom: 8%;
+}
+
+.font-sizing{
+    font-size: 13px;
+}
+
