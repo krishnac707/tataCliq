@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mens-body{
+    width: 100%;
+    background-color: #ececec;
+    padding-bottom: 5%;
+}
+
+.mens-silder-image{
+    padding-top: 100px;
+    width: 100%;
+}
+
+.slider-image{
+    width: 100%;
+}
+
+.mens-multiple-products{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mens-all-wears{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mens-product-mensComponent{
+    width: 12%;
+}
+
+.all-wear-images{
+ width: 100%;
+}
+
+.bank-card-offer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
+
+.diff-bank-offer{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icici-offer-div{
+    width: 49%;
+    padding-top: 2%;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 4px;
+    /* justify-content; */
+}
+
+.icici-offer{
+    width: 95%;
+    border: 1px solid #fff;
+}
+
+.hdfc-offer-div{
+    width: 49%;
+    padding-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 4px;
+
+}
+
+.hdfc-offer{
+    width: 86%;
+    border: 1px solid #fff;
+}
+
+.our-top-four{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.our-top-four1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+.our-top-four-images{
+    width: 80%;
+}
+
+.jack{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    /* margin-bottom: 4%; */
+}
+
+.jones{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jackJonesImage{
+    width: 49%;
+}
+
+.jackImg{
+    width: 100%;
+}
+
+.pantaloons{
+    width: 24%;
+}
+
+.pantaloonsImg{
+    width: 100%;
+}

@@ -5,13 +5,14 @@ import superSix from './images/super.jpg';
 import HomeImg from './images/homeImage.jpg';
 import Sofa from './images/sofa.jpg';
 import Accessories from './images/accessories.jpg';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
     return (
         <div className='home-body'>
             <div className='slider-image'>
-                <img src={sliderImage} alt="" />
+                <Link to="/mens"><img src={sliderImage} alt="" /></Link>
             </div>
             <div className="allItems">
                 <img className='image-size' src="https://assets.tatacliq.com/medias/sys_master/images/47599336652830.jpg" alt="" />
