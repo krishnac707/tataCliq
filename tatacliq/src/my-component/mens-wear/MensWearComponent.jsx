@@ -1,4 +1,6 @@
 import './MensWearComponent.css';
+import { Link } from 'react-router-dom';
+
 
 const MensWearComponent = () => {
     return (
@@ -165,15 +167,17 @@ const MensWearComponent = () => {
 
                         <div className="mens-single-product">
                             <div className="mens-product-image">
-                                <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015191655_437Wx649H_202211060047171.jpeg" className='mens-product-img' alt="" />
-                                {/* <img src="https://www.tatacliq.com/src/general/components/img/WL1.svg" className='image-overlay' alt="" /> */}
-                                <div className='image-overlay'>
-                                    <img src="https://www.tatacliq.com/src/general/components/img/WL1.svg" className='image-overlay' alt="" />
-                                </div>
+                                <Link to="/mens-shirt-detail">
+                                    <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015191655_437Wx649H_202211060047171.jpeg" className='mens-product-img' alt="" />
+                                    {/* <img src="https://www.tatacliq.com/src/general/components/img/WL1.svg" className='image-overlay' alt="" /> */}
+                                    <div className='image-overlay'>
+                                        <img src="https://www.tatacliq.com/src/general/components/img/WL1.svg" className='image-overlay' alt="" />
+                                    </div>
 
-                                <div className='image-overlay-for-same-product'>
-                                    <img src="https://www.tatacliq.com/src/general/components/img/similarIconNew.svg" className='image-overlay' alt="" />
-                                </div>
+                                    <div className='image-overlay-for-same-product'>
+                                        <img src="https://www.tatacliq.com/src/general/components/img/similarIconNew.svg" className='image-overlay' alt="" />
+                                    </div>
+                                </Link>
                             </div>
 
                             <div className="product-info">
@@ -189,6 +193,7 @@ const MensWearComponent = () => {
                         </div>
 
                         <div className="mens-single-product">
+
                             <div className="mens-product-image">
                                 <img src="https://img.tatacliq.com/images/i9/437Wx649H/MP000000016373929_437Wx649H_202302042021191.jpeg" className='mens-product-img' alt="" />
                                 <div className='image-overlay'>
@@ -346,7 +351,7 @@ const MensWearComponent = () => {
                                 <h3 style={{ marginBottom: "1%" }}>U.S. Polo Assn.</h3>
                                 <p style={{ marginBottom: "1%", color: "#4a4a4a" }}>U.S. Polo Assn. Orange Cotton Regular Fit Striped Shirt</p>
                                 <p>Rs. <span><b>1319</b></span> <span style={{ textDecoration: "line-through", color: "#979797", fontSize: "12px" }}>Rs.2399</span></p>
-                                
+
                             </div>
                         </div>
 

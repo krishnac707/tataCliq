@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div className='home-body'>
             <div className='slider-image'>
-                <Link to="/mens"><img src={sliderImage} alt="" /></Link>
+                <Link to="/mens"><img src={sliderImage} alt="" className='home-slider-image-css' /></Link>
             </div>
             <div className="allItems">
                 <img className='image-size' src="https://assets.tatacliq.com/medias/sys_master/images/47599336652830.jpg" alt="" />

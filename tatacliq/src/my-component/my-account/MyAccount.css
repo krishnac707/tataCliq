@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#my-account-body {
+    width: 90%;
+    padding-top: 170px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 15%;
+}
+
+.my-account-profile-detail {
+    width: 100;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-account-menu-list {
+    width: 20%;
+
+}
+
+ul {
+    list-style: none;
+    font-size: 15px;
+    height: fit-content;
+}
+
+ul li:nth-child(1) {
+    font-weight: 600;
+    background-color: #f9f9f9;
+    padding: 7%;
+}
+
+.my-account-li-flex {
+    width: 100%;
+    display: flex;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    color: #212121;
+    justify-content: space-between;
+}
+
+.my-account-li-flex>div:nth-child(1) {
+
+    width: 15%;
+    display: flex;
+    justify-content: end;
+}
+
+
+.my-account-li-flex>div:nth-child(1)>img:nth-child(1) {
+    width: 55%;
+}
+
+.my-account-li-flex>p:nth-child(2) {
+    width: 80%;
+}
+
+.my-account-middle-content {
+    width: 56%;
+    padding-left: 2%;
+}
+
+.my-account-middile-recent-order-div {
+    width: 100%;
+}
+
+.my-account-recent-order-div {
+    width: 100%;
+    display: flex;
+    font-weight: 700;
+    font-size: 17px;
+    padding-top: 2%;
+    color: #4a4a4a;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.my-account-recent-order-div>p:nth-child(1) {
+    width: 20%;
+    color: #da1c5c;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #da1c5c;
+}
+
+.my-account-recent-order-div>p:nth-child(2) {
+    width: 18%;
+}
+
+.my-account-recent-order-div>p:nth-child(3) {
+    width: 17%;
+}
+
+.my-account-recent-order-div>p:nth-child(4) {
+    width: 16%;
+}
+
+.my-account-recent-order-div>p:nth-child(5) {
+    width: 17%;
+}
+
+.my-account-shopping-last-time {
+    width: 60%;
+    margin-right: 10%;
+    margin-left: 35%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8%;
+}
+
+.order-name-my-account {
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+    color: #181818;
+    margin-bottom: 20px;
+    margin-bottom: 5%;
+}
+
+.my-account-shopping-last-time>p:nth-child(1) {
+    width: 29%;
+    font-size: 12px;
+    padding-top: 4px;
+    text-align: end;
+}
+
+.my-account-shopping-last-time>select:nth-child(2) {
+    width: 67%;
+    padding: 4px;
+    background-color: #f5f2f3;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    color: black;
+    border: 1px solid #d2d2d2;
+}
+
+.my-account-continue-shopping-button {
+    width: 23%;
+    color: white;
+    background-color: #da1c5c;
+    font-weight: 700;
+    text-align: center;
+    margin-left: 39%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: none;
+    border-radius: 25px;
+}
+
+.my-account-right-user-data {
+    width: 20%;
+    border: 1px solid #d2d2d2;
+    height: fit-content;
+}
+
+.my-account-username-gmail-div {
+    width: 100%;
+    background: white;
+}
+
+.my-account-username-first-letter {
+    width: 25%;
+    border-radius: 50px;
+    margin-top: 15%;
+    background-color: #ab47bc;
+    color: white;
+    text-align: center;
+    height: 59px;
+    padding-top: 7%;
+    font-weight: 600;
+    margin-left: 36%;
+    margin-bottom: 8%;
+}
+
+.my-account-username-gmail-div>h4:nth-child(2) {
+    width: 100%;
+    height: auto;
+    color: #212121;
+    font-size: 14px;
+    padding-left: 8%;   
+    padding-top: 10px;
+    word-break: break-all;
+}
+
+.my-account-username-gmail-div>p:nth-child(3) {
+    width: 100%;
+    height: auto;
+    color: #212121;
+    font-size: 17px;
+    padding-left: 8%;   
+    padding-top: 5px;
+    word-break: break-all;
+    margin-bottom: 6%;
+}
+
+.my-account-username-gmail-div>div:nth-child(4) {
+    background: rgb(245, 242, 243);
+    height: 25px;
+}
+
+.my-account-username-gmail-div>p:nth-child(5){
+    width: 100%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    padding-left: 5%;
+    background: #f9f9f9;
+    font-weight: 700;
+    font-size: 15px;
+    color: #212121;
+    margin-bottom: 3%;
+}
+
+.my-account-username-gmail-div>p:nth-child(6){
+    padding-left: 5%;
+    color: #212121;
+}

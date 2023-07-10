@@ -1,0 +1,746 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#mens-shirt-body {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 5%;
+}
+
+.men-shirt-main-div {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.mens-uspolo-inside-div {
+    width: 85%;
+    margin-left: 5%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-uspolo-shirt-images {
+    width: 49%;
+}
+
+.right-uspolo-shirt-detail {
+    width: 49%;
+}
+
+.uspolo-shirt-images-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.uspolo-shirt-images-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.uspolo-shirt-images-1 {
+    width: 49%;
+}
+
+.uspolo-shirt-images-1>img:nth-child(1) {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.uspolo-shirt-images-2 {
+    width: 49%;
+    position: relative;
+}
+
+.uspolo-shirt-images-2>img:nth-child(1) {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.uspolo-shirt-images-2>img:nth-child(2) {
+    width: 15%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.uspolo-shirt-images-2>img:nth-child(3) {
+    position: absolute;
+    bottom: 22px;
+    right: 15px;
+    border-radius: 10px;
+}
+
+.uspolo-shirt-images-3 {
+    width: 31%;
+}
+
+.uspolo-shirt-images-3>img:nth-child(1) {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.uspolo-shirt-images-4 {
+    width: 31%;
+}
+
+.uspolo-shirt-images-4>img:nth-child(1) {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.uspolo-shirt-images-5 {
+    width: 31%;
+}
+
+.uspolo-shirt-images-5>img:nth-child(1) {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.uspolo-popularity-div {
+    width: 43%;
+    display: flex;
+    border-radius: 25px;
+    background-color: #fdf4f7;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    margin-bottom: 2%;
+}
+
+.uspolo-popularity-div>span:nth-child(1) {
+    width: 10%;
+}
+
+.uspolo-popularity-div>span:nth-child(1)>img:nth-child(1) {
+    width: 70%;
+}
+
+.uspolo-popularity-div>p:nth-child(2) {
+    font-family: "light";
+    width: 85%;
+    font-size: 13px;
+}
+
+.right-uspolo-shirt-detail>p:nth-child(3) {
+    margin-top: 1%;
+    font-size: 17px;
+    font-family: "light";
+    color: #4a4a4a;
+}
+
+.right-uspolo-shirt-detail>h3:nth-child(4) {
+    margin-top: 2%;
+}
+
+.right-uspolo-shirt-detail>p:nth-child(5) {
+    font-size: 12px;
+    margin-top: 1%;
+    font-family: "light";
+    color: #4a4a4a;
+    margin-bottom: 2%;
+}
+
+.right-uspolo-shirt-detail>p:nth-child(6) {
+    font-size: 13px;
+    color: #ff1744;
+    font-weight: 600;
+    font-weight: 1%;
+}
+
+.uspolo-shirt-rating-div {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+    margin-bottom: 7%;
+}
+
+.uspolo-shirt-rating-div>div:nth-child(1) {
+    width: 35%;
+    background-color: #49a862;
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+    padding-bottom: 1px;
+}
+
+.uspolo-shirt-rating-div>p:nth-child(2) {
+    width: 63%;
+}
+
+.uspolo-border-right-shirt-detail {
+    border-top: 1px solid #d5d5d5;
+    margin-bottom: 3%;
+}
+
+.right-uspolo-shirt-detail>p:nth-child(9) {
+    font-size: 13px;
+    color: #212121;
+}
+
+.different-color-uspolo-shirt {
+    margin-top: 2%;
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+
+.different-color-uspolo-shirt>div:nth-child(1) {
+    width: 31%;
+}
+
+.different-color-uspolo-shirt>div:nth-child(1)>img:nth-child(1) {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.different-color-uspolo-shirt>div:nth-child(2) {
+    width: 31%;
+}
+
+.different-color-uspolo-shirt>div:nth-child(2)>img:nth-child(1) {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.different-color-uspolo-shirt>div:nth-child(3) {
+    width: 31%;
+}
+
+.different-color-uspolo-shirt>div:nth-child(3)>img:nth-child(1) {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.select-size-uspolo-shirt {
+    width: 100%;
+    display: flex;
+    padding-right: 2%;
+    margin-bottom: 3%;
+}
+
+.select-size-uspolo-shirt>p:nth-child(1) {
+    width: 80%;
+}
+
+.select-size-uspolo-shirt>p:nth-child(2) {
+    width: 20%;
+    display: flex;
+    color: #ff1744;
+    justify-content: flex-end;
+}
+
+.different-sizes-uspolo-shirt {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.uspolo-shirts-for-all-sizes-css {
+    width: 18%;
+    text-align: center;
+    border-radius: 10px;
+    color: #212121;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    border: 1px solid #212121;
+}
+
+.uspolo-model-cms-info {
+    font-size: 15px;
+    width: 60%;
+    color: #4a4a4a;
+    margin-bottom: 2%;
+}
+
+.uspolo-shirt-available-offers {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    color: #212121;
+}
+
+.uspolo-bank-card-offers-css {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+
+.uspolo-bank-card-offers-css>div:nth-child(1) {
+    width: 6%;
+}
+
+.uspolo-bank-card-offers-css>div:nth-child(1)>img:nth-child(1) {
+    width: 100%;
+}
+
+.uspolo-bank-card-offers-css>div:nth-child(2) {
+    width: 93%;
+}
+
+.uspolo-bank-card-offers-css>div:nth-child(2)>p:nth-child(1) {
+    font-size: 14px;
+    color: #231f20;
+    margin-bottom: 1%;
+}
+
+.uspolo-bank-card-offers-css>div:nth-child(2)>p:nth-child(2) {
+    font-size: 15px;
+    color: #231f20;
+}
+
+.uspolo-bank-card-offers-css>div:nth-child(2)>p:nth-child(2)>span:nth-child(1) {
+    font-size: 13px;
+    color: #4c74e3;
+    cursor: pointer;
+}
+
+.uspolo-see-more-offers-shirt {
+    color: #da1c5c;
+    font-size: 15px;
+    margin-bottom: 3%;
+}
+
+.show-pincode-delhi {
+    width: 99%;
+    display: flex;
+    margin-right: 1%;
+    padding: 2%;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+    margin-bottom: 5%;
+}
+
+.show-pincode-delhi>input:nth-child(1) {
+    width: 80%;
+    border: none;
+    outline: none;
+    color: #4a4a4a;
+    font-size: 16px;
+}
+
+.show-pincode-delhi>p:nth-child(2) {
+    color: #da1c5c;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.delivery-uspolo-shirt--main-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.delivery-uspolo-shirt--main-div>div:nth-child(1) {
+    width: 6%;
+}
+
+.delivery-uspolo-shirt--main-div>div:nth-child(1)>img:nth-child(1) {
+    width: 100%;
+}
+
+.delivery-uspolo-shirt--main-div>div:nth-child(2) {
+    width: 92%;
+    color: #231f20;
+}
+
+.uspolo-soldBy-shirt {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    border-radius: 4px;
+    color: #231f20;
+    border: 1px solid #d5d5d5;
+    margin-bottom: 2%;
+}
+
+.uspolo-soldBy-shirt>p:nth-child(1) {
+    width: 95%;
+}
+
+.uspolo-soldBy-shirt>p:nth-child(2) {
+    width: 5%;
+    font-size: 25px;
+    margin-top: -7px;
+    
+}
+
+.fit-uspolo-shirt-div-css {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.fit-uspolo-shirt-div-css>div:nth-child(1) {
+    padding: 5px;
+    width: 35%;
+    background: rgb(242, 249, 249);
+    color: rgb(0, 102, 102);
+}
+
+.fit-uspolo-shirt-div-css>div:nth-child(2) {
+    padding: 5px;
+    width: 63%;
+    color: #4a4a4a;
+}
+
+.more-information-product-uspolo-shirt {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+    padding: 3% 2%;
+    border: 1px solid #d5d5d5;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.more-information-product-uspolo-shirt>div:nth-child(1) {
+    width: 6%;
+}
+
+.more-information-product-uspolo-shirt>div:nth-child(1)>img:nth-child(1) {
+    padding-top: 25%;
+    width: 100%;
+}
+
+.more-information-product-uspolo-shirt>div:nth-child(2) {
+    color: #4a4a4a;
+    width: 86%;
+}
+
+.more-information-product-uspolo-shirt>div:nth-child(2)>p:nth-child(2) {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.more-information-product-uspolo-shirt>p:nth-child(3) {
+    width: 4%;
+    font-size: 20px;
+    padding-top: 1%;
+}
+
+.same-color-progress-bar-div-uspolo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+.same-color-progress-bar-div-uspolo>div:nth-child(1) {
+    width: 25%;
+}
+
+.same-color-progress-bar-div-uspolo>div:nth-child(2) {
+    width: 73%;
+}
+
+.middle {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+}
+
+.bar-5 {
+    width: 88%;
+    height: 4px;
+    background-color: #399;
+}
+
+.bar-5-1 {
+    width: 7%;
+    height: 4px;
+    background-color: #399;
+}
+
+.bar-5-2 {
+    width: 5%;
+    height: 4px;
+    background-color: #399;
+}
+
+.thigh-div-uspolo-shirt{
+    width: 100%;
+    background: linear-gradient(165.89deg, #fbe8ef 21.19%, #fff 90.98%);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 3%;
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1){
+    width: 100%;
+    padding: 3%;
+    background-color: white;
+    
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1)>div:nth-child(1){
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1)>div:nth-child(1)>div:nth-child(1){
+    width: 20%;
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>img:nth-child(1){
+    width: 100%;
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1)>div:nth-child(1)>div:nth-child(2){
+    width: 78%;
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1)>div:nth-child(1)>div:nth-child(2)>h3:nth-child(1){
+    color: #231f20;
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1)>p:nth-child(2){
+    font-size: 17px;
+    color: #4a4a4a;
+    margin-bottom: 2%;
+}
+
+.thigh-div-uspolo-shirt>div:nth-child(1)>button:nth-child(3){
+    width: 100%;
+    border: 1px solid #da1c5c;
+    border-radius: 8px;
+    font-weight: 800;
+    color: #da1c5c;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+.add-to-cart-button-wishlist-button{
+    width: 100%;
+    margin-top: 2%;
+    padding-right: 4%;
+    margin-bottom: 15%;
+}
+
+.buyNow-wishlist-share{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buyNow-wishlist-share>div:nth-child(1){
+    width: 10%;
+    border-radius: 8px;
+    border: 1px solid #d5d5d5;
+}
+
+.buyNow-wishlist-share>div:nth-child(1)>img:nth-child(1){
+    width: 85%;
+    padding-top: 3%;
+    padding-left: 12%;
+}
+
+.buyNow-wishlist-share>div:nth-child(2){
+    width: 45%;
+    display: flex;
+}
+
+.buyNow-wishlist-share>div:nth-child(2)>div:nth-child(1){
+    width: 22%;
+    border-radius: 8px;
+    border: 1px solid #d5d5d5;
+}
+
+.buyNow-wishlist-share>div:nth-child(2)>div:nth-child(1)>img:nth-child(1){
+    width: 100%;
+}
+
+.buyNow-wishlist-share>div:nth-child(2)>button:nth-child(2){
+    width: 78%;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    color: #da1c5c;
+    font-size: 17px;
+    background-color: white;
+    border: 1px solid #da1c5c;
+}
+
+.buyNow-wishlist-share>button:nth-child(3){
+    width: 39%;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    background-color: #da1c5c;
+    border: 1px solid #da1c5c;
+}
+
+.bottom-style-with-div{
+    margin-left: 7%;
+    margin-right: 7%;
+    width: 86%;
+}
+
+
+.bottom-style-with-div>h3:nth-child(1){
+    color: #231f20;
+    margin-bottom: 1%;
+}
+
+.recommended-combo{
+    width: 60%;
+    font-weight: bold;
+    font-size: 17px;
+    color: #212121;
+    display: flex;
+    margin-bottom: 2%;
+    justify-content: space-between;
+}
+
+.recommended-combo>p:nth-child(1){
+    width: 28%;
+    color: #da1c5c;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #da1c5c;
+}
+
+.recommended-combo>p:nth-child(2){
+    width: 16%;
+}
+
+.recommended-combo>p:nth-child(3){
+    width: 11%;
+   
+}
+.recommended-combo>p:nth-child(4){
+    width: 15%;
+  
+}
+.recommended-combo>p:nth-child(5){
+    width: 15%;   
+}
+
+.recommended-combo-div-product{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.similar-combo-div-product{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ivoc-color-benetton-div{
+    width: 18%;
+}
+
+.ivoc-color-benetton-div>img:nth-child(1){
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 2%;
+}
+
+.ivoc-color-benetton-div>h4:nth-child(2){
+    color: #212121;
+}
+
+.ivoc-color-benetton-div>p:nth-child(3){
+    color: #4a4a4a;
+    margin-bottom: 3%;
+}
+
+
+.united-color-benetton-div{
+    width: 23%;
+}
+
+.united-color-benetton-div>img:nth-child(1){
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 2%;
+}
+
+.united-color-benetton-div>h4:nth-child(2){
+    color: #212121;
+}
+
+.united-color-benetton-div>p:nth-child(3){
+    color: #4a4a4a;
+    margin-bottom: 3%;
+}
+
+.product-rating-div-uspolo-shirt {
+    width: 94%;
+    display: flex;
+    margin-top: 3%;
+    margin-bottom: 8%;
+}
+
+.rating-div-background-color {
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    width: 18%;
+    background-color: #eef8e7;
+}
+
+.Add-to-bag-recommend{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    color: #da1c5c;
+    border: 1px solid #da1c5c;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 17px;
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+
+.bottom-style-with-div>img:nth-child(4){
+    margin-top: 5%;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.bottom-style-with-div>h2:nth-child(5){
+    margin-bottom: 4%;
+    color: #212121;
+    margin-bottom: 3%;
+}
