@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './MyCart.css'
 const MyCart = () => {
     return (
@@ -108,7 +109,7 @@ const MyCart = () => {
                                 </div>
                                 <div>
                                     <button>
-                                        Checkout
+                                        <Link to="/checkout" style={{color:'white',textDecoration:'none'}}>Checkout</Link>
                                     </button>
                                 </div>
                             </div>

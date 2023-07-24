@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mensWearBody {
+    width: 100%;
+    padding-top: 100px;
+    margin-bottom: 5%;
+}
+
+.mens-heading-css {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.mens-wear-para-css {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.men-wear-sorting-div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.men-wear-sorting {
+    width: 25%;
+    display: flex;
+    margin-right: 8%;
+    justify-content: space-between;
+}
+
+.sorting-all {
+    width: 86%;
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
+    padding: 2%;
+    display: flex;
+}
+
+.selectTag {
+    width: 70%;
+}
+
+.sorting-image-div {
+    padding-top: 2%;
+    width: 8%;
+}
+
+.sort {
+    width: 16%;
+}
+
+.sort-select {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.sort>p:nth-child(1) {
+    color: rgb(143, 143, 143)
+}
+
+.sorting-image-div>img:nth-child(1) {
+    width: 100%;
+}
+
+.mens-main-section {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.mens-filter-product {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mens-filter-section {
+    width: 22%;
+    height: fit-content;
+    border-radius: 8px;
+    border: 1px solid #d2d2d2;
+    padding: 1%;
+}
+
+
+
+.filter-css {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7%;
+}
+
+.filter-para-css {
+    width: 30%;
+    font-size: 17px;
+    /* font-family: semibold; */
+    color: #212121;
+    font-weight: 600;
+}
+
+.filter-clear-css {
+    width: 26%;
+    color: #da1c5c;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 1%;
+}
+
+.line-div {
+    width: 94%;
+    margin-left: 2%;
+    border-top: 1px solid #d2d2d2;
+
+}
+
+.department-css {
+    width: 100%;
+    margin-top: 3%;
+    color: #212121;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.mens-clothing-css {
+    width: 52%;
+    background-color: #f5f5f5;
+    color: #8d8d8d;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 3%;
+    padding-left: 4%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    padding-right: 4%;
+    margin-bottom: 6%;
+}
+
+.product-type-css {
+    width: 100%;
+    margin-top: 12%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12%;
+}
+
+.product-type-css1 {
+    width: 100%;
+    margin-top: 12%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+
+.product-heading-css {
+    width: 95%;
+    margin-top: 3%;
+    color: #212121;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.product-dash-css {
+    font-size: 12px;
+    width: 5%;
+    padding-top: 4%;
+    color: #d2d2d2;
+}
+
+.product-dash-css1 {
+    font-size: 22px;
+    width: 5%;
+    padding-top: 2%;
+    color: #d2d2d2;
+}
+
+.cloth-type-css {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12%;
+}
+
+.cloth-type-css1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7%;
+}
+
+.radio-css {
+    height: 21px;
+    width: 21px;
+    vertical-align: middle;
+    border-color: #d2d2d2;
+}
+
+.tshirt-name {
+    width: 63%;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+.tshirt-qty {
+    width: 20%;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: end;
+    color: #c5c5c5;
+}
+
+.mens-product-section {
+    width: 76%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* border: 1px solid #d2d2d2; */
+}
+
+.mens-single-product {
+    width: 23%;
+    height: 450px;
+    height: fit-content;
+    /* margin-top: 1%; */
+    margin-bottom: 2%;
+    /* border-radius: 8px; */
+    border: 2px solid transparent;
+}
+
+.mens-single-product:hover {
+    width: 23%;
+    height: 450px;
+    border-radius: 5px;
+    border: 2px solid #d2d2d2;
+    height: fit-content;
+}
+
+.mens-product-image{
+    position: relative;
+}
+
+.mens-product-img {
+    width: 100%;
+}
+
+.image-overlay{
+    /* width: 100%; */
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.image-overlay-for-same-product{
+    position: absolute;
+    right: 5px;
+    bottom: 39px;
+}
+
+.product-info {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+.product-rating-div {
+    width: 94%;
+    display: flex;
+    margin-bottom: 1%;
+    margin-top: 3%;
+}
+
+.rating-div {
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    width: 18%;
+    border: 1px solid #d2d2d2;
+}
+
+.limited-stock {
+    color: #d42600;
+    font-size: 12px;
+}
