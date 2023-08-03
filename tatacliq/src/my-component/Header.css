@@ -19,7 +19,7 @@
     justify-content: center;
 }
 
-.logo>a{
+.logo>a {
     color: "white";
     text-decoration: "none";
     padding-top: 6%;
@@ -79,6 +79,16 @@
     justify-content: space-between;
 }
 
+/* .my-account-heading {
+    width: 16%;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+} */
+
 .category {
     width: 15%;
     color: white;
@@ -97,15 +107,54 @@
     border: none;
 }
 
+.dropbtn1 {
+    /* background-color: #212121; */
+    color: white;
+    /* padding: 16px; */
+    font-size: 16px;
+    border: none;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
+}
+
+.login-register-button-css-navbar {
+    cursor: pointer;
+    height: 35px;
+    width: 135px;
+    padding: 0px 15px;
+    border-radius: 18px;
+    border: none;
+    color: white;
+    margin: 5%;
+    background: none rgb(255, 23, 68);
+}
+
+.dropdown-content1 {
+    display: none;
+    right: 1%;
+    position: absolute;
+    background-color: white;
+    /* color: black; */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content1 a {
+    color: black;
+    /* padding: 4px 10px; */
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: white;
+    /* color: black; */
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -118,11 +167,44 @@
     display: block;
 }
 
+.dropdonw-mens-para {
+    color: black;
+    cursor: pointer;
+}
+
+.dropdonw-mens-para:hover {
+    color: black;
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.dropdonw-mens-para1 {
+    color: black;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(214, 211, 211);
+}
+
+.dropdonw-mens-para1:hover {
+    color: black;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(214, 211, 211);
+
+    /* background-color: #ddd; */
+}
+
 .dropdown-content a:hover {
     background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* .dropdown-content1 a:hover {
+    background-color: #ddd;
+} */
+
+.dropdown:hover .dropdown-content1 {
     display: block;
 }
 

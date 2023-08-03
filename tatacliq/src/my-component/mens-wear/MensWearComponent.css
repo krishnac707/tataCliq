@@ -225,23 +225,20 @@
     width: 76%;
     display: flex;
     flex-wrap: wrap;
+    height: fit-content;
     justify-content: space-around;
     /* border: 1px solid #d2d2d2; */
 }
 
 .mens-single-product {
     width: 23%;
-    height: 450px;
     height: fit-content;
-    /* margin-top: 1%; */
-    margin-bottom: 2%;
-    /* border-radius: 8px; */
     border: 2px solid transparent;
 }
 
 .mens-single-product:hover {
     width: 23%;
-    height: 450px;
+    /* height: 450px; */
     border-radius: 5px;
     border: 2px solid #d2d2d2;
     height: fit-content;
@@ -253,6 +250,8 @@
 
 .mens-product-img {
     width: 100%;
+    height: 250px;
+    object-fit: contain;
 }
 
 .image-overlay{

@@ -1,288 +1,352 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './MensShirtDetail.css';
 import Shirt2Image from './mens-shirt-folder-image/fingure.jpg';
 import shopMore from './mens-shirt-folder-image/shop-more.jpg'
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 const MensShirtDetail = () => {
     const [addpincode, setpincode] = useState("new delhi,110001")
+    const [allProducts, setAllProducts] = useState([]);
+    const { id } = useParams();
+    const [singleproduct, setSingleProduct] = useState({});
+    const [userdata, setUserData] = useState();
+    const [isuserLogin, setUserLogin] = useState(false);
+    const [currentEmail, setCurrentEmail] = useState("");
+    const router = useNavigate();
+
+    useEffect(() => {
+        const product = JSON.parse(localStorage.getItem("Products"));
+        if (product) {
+            for (var i = 0; i < product.length; i++) {
+                setAllProducts(product);
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (id && allProducts.length) {
+            const result = allProducts.find((product) => product.id == id)
+            // console.log(result, "result");
+            setSingleProduct(result);
+        }
+    }, [allProducts, id])
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("CurrentUser"));
+        if (user) {
+            setUserLogin(true);
+            setUserData(user);
+            setCurrentEmail(user?.email);
+        }
+    }, [])
+
+    const cartProduct = () => {
+        if (isuserLogin) {
+            if (userdata?.role == "Buyer") {
+                const alluser = JSON.parse(localStorage.getItem("Users"));
+                for (var i = 0; i < alluser.length; i++) {
+                    if (alluser[i].email == currentEmail) {
+                        alluser[i]?.cart.push(singleproduct);
+                        localStorage.setItem("Users", JSON.stringify(alluser));
+                        toast.success("Product Added Successfully");
+                        router("/all-products");
+                        break;
+                    }
+                }
+            }
+            else {
+                toast.error("Sorry!!! You are a seller. you won't be able to buy product")
+            }
+        }
+        else {
+            toast.error("please login first");
+            router('/login');
+        }
+    }
+
+    const redirect = (id) => {
+        router(`/update-product/${id}`);
+    }
+
     return (
         <div id="mens-shirt-body">
             <div className="men-shirt-main-div">
                 <div className='mens-uspolo-inside-div'>
-                    <div className="left-uspolo-shirt-images">
-                        <div className="uspolo-shirt-images-top">
-                            <div className="uspolo-shirt-images-1">
-                                <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015191655_437Wx649H_202211060047171.jpeg" alt="" />
+                    {singleproduct && <>
+                        <div className="left-uspolo-shirt-images">
+                            <div className="uspolo-shirt-images-top">
+                                <div className="uspolo-shirt-images-1">
+                                    <img src={singleproduct.image} alt="" />
+                                </div>
+                                <div className="uspolo-shirt-images-2">
+                                    <img src={singleproduct.image} alt="" />
+                                    <img src="https://www.tatacliq.com/src/general/components/img/similarIconNew.svg" alt="" />
+                                    <img src={Shirt2Image} alt="" />
+                                </div>
                             </div>
-                            <div className="uspolo-shirt-images-2">
-                                <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015191655_437Wx649H_202211060047122.jpeg" alt="" />
-                                <img src="https://www.tatacliq.com/src/general/components/img/similarIconNew.svg" alt="" />
-                                <img src={Shirt2Image} alt="" />
-                            </div>
-                        </div>
-                        <div className="uspolo-shirt-images-bottom">
-                            <div className="uspolo-shirt-images-3">
-                                <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015191655_437Wx649H_202211060047093.jpeg" alt="" />
-                            </div>
-                            <div className="uspolo-shirt-images-4">
-                                <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015191655_437Wx649H_202211060047144.jpeg" alt="" />
-                            </div>
-                            <div className="uspolo-shirt-images-5">
-                                <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015191655_437Wx649H_202211060047195.jpeg" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="right-uspolo-shirt-detail">
-                        <div className="uspolo-popularity-div">
-                            <span><img src="https://www.tatacliq.com/src/assets/ProductNudgeIcons/Wishlisted.svg" alt="" /></span>
-                            <p>Popular: Recently wishlisted 66 times</p>
-                        </div>
-
-                        <h3>U.s. polo assn</h3>
-                        <p>U.S. Polo Assn. Dark Green Regular Fit Shirt</p>
-
-                        <h3>MRP:  ₹2299</h3>
-                        <p>Inclusive of all taxes</p>
-
-                        <p>Use MENSEOSS coupon to get 10% off on cart value 1999/- and above.</p>
-
-                        <div className="uspolo-shirt-rating-div">
-                            <div><p>2.8 <span>&#9733;</span></p></div>
-                            <p><span><b>5</b></span> Ratings</p>
-                        </div>
-
-                        <div className="uspolo-border-right-shirt-detail"></div>
-
-                        <p><span><b>Colour: </b></span>Dark Green</p>
-
-                        <div className='different-color-uspolo-shirt'>
-                            <div>
-                                <img src="https://img.tatacliq.com/images/i8/97Wx144H/MP000000015191655_97Wx144H_202211060047171.jpeg" alt="" />
-                            </div>
-                            <div>
-                                <img src="https://img.tatacliq.com/images/i8/97Wx144H/MP000000015191660_97Wx144H_202211060047151.jpeg" alt="" />
-                            </div>
-                            <div>
-                                <img src="https://img.tatacliq.com/images/i8/97Wx144H/MP000000015191658_97Wx144H_202211060047201.jpeg" alt="" />
-                            </div>
-                        </div>
-
-                        <div className="uspolo-border-right-shirt-detail"></div>
-
-                        <div className='select-size-uspolo-shirt'>
-                            <p><b>Select Size</b></p>
-                            <p><b>Size Guide</b></p>
-                        </div>
-
-                        <div className="different-sizes-uspolo-shirt">
-                            <div className="uspolo-shirts-for-all-sizes-css">
-                                <p>S</p>
-                            </div>
-                            <div className="uspolo-shirts-for-all-sizes-css">
-                                <p>M</p>
-                            </div>
-                            <div className="uspolo-shirts-for-all-sizes-css">
-                                <p>L</p>
-                            </div>
-                            <div className="uspolo-shirts-for-all-sizes-css">
-                                <p>XL</p>
-                            </div>
-                            <div className="uspolo-shirts-for-all-sizes-css">
-                                <p>XXL</p>
-                            </div>
-                        </div>
-
-                        <p className='uspolo-model-cms-info'>Model is 6'0"/185 cms and is wearing an M size
-                            100% Cotton, Machine wash</p>
-
-                        <div className="uspolo-border-right-shirt-detail"></div>
-
-                        <h3 className='uspolo-shirt-available-offers'>Available Offers</h3>
-
-                        <div className="uspolo-bank-card-offers-css">
-                            <div>
-                                <img src="https://assets.tatacliq.com/medias/sys_master/images/27678831411230.png" alt="" />
-                            </div>
-                            <div>
-                                <p>10% Instant Discount on Kotak Bank Credit Cards only.</p>
-                                <p>Min Purchase: ₹2500 | Max Discount: ₹1000 <span>more</span></p>
-                            </div>
-                        </div>
-
-                        <div className="uspolo-bank-card-offers-css">
-                            <div>
-                                <img src="https://assets.tatacliq.com/medias/sys_master/images/27678831280158.png" alt="" />
-                            </div>
-                            <div>
-                                <p>15% off on ICICI Credit Cards</p>
-                                <p>Use Code: ICICIWEEKEND | Min Purchase: ₹1500 <span>more</span></p>
-                            </div>
-                        </div>
-
-                        <div className="uspolo-bank-card-offers-css">
-                            <div>
-                                <img src="https://assets.tatacliq.com/medias/sys_master/images/27678831280158.png" alt="" />
-                            </div>
-                            <div>
-                                <p>15% off on ICICI Netbanking</p>
-                                <p>Use Code: ICICINB | Min Purchase: ₹2000 <span>more</span></p>
-                            </div>
-                        </div>
-
-                        <p className='uspolo-see-more-offers-shirt'><b>See 5 More Offers</b></p>
-                        <div className="uspolo-border-right-shirt-detail"></div>
-
-                        <h3 className='uspolo-shirt-available-offers'>Ship to</h3>
-
-                        <div className="show-pincode-delhi">
-                            <input type="text" value={addpincode} />
-                            <p>Change Pincode</p>
-                        </div>
-
-                        <div className="delivery-uspolo-shirt--main-div">
-                            <div>
-                                <img src="https://www.tatacliq.com/src/general/components/img/deliveryIcon.svg" alt="" />
-                            </div>
-                            <div>
-                                <p>Delivery by <span><b> 13th Jul</b></span></p>
-                            </div>
-                        </div>
-
-                        <div className="delivery-uspolo-shirt--main-div">
-                            <div>
-                                <img src="https://www.tatacliq.com/src/general/components/img/cod.svg" alt="" />
-                            </div>
-                            <div>
-                                <p><span><b> Cash on Delivery |</b></span> <span style={{ color: "#338715" }}><b>Available</b></span></p>
-                            </div>
-                        </div>
-
-                        <div className="delivery-uspolo-shirt--main-div">
-                            <div>
-                                <img src="https://www.tatacliq.com/src/general/components/img/returnReplacementIcon.svg" alt="" />
-                            </div>
-                            <div>
-                                <p><span><b>10 Days Easy Return |</b></span><span style={{ color: "#da1c5c" }}><b> Know More</b></span></p>
-                            </div>
-                        </div>
-
-                        <div className="uspolo-soldBy-shirt">
-                            <p><b>Sold By 1 Arvind Life Style Brands Ltd</b></p>
-                            <p>&gt;</p>
-                        </div>
-
-                        <div className="uspolo-border-right-shirt-detail"></div>
-
-                        <h3 className='uspolo-shirt-available-offers'>Product Details</h3>
-
-                        <p style={{ color: "#4a4a4a", fontSize: "15px" }}>Refresh your wardrobe this new season with flavors of latest global
-                            fashion in this uber stylish dark green shirt from the latest range
-                            of the iconic U.S. Polo Assn.</p>
-
-                        <div className="fit-uspolo-shirt-div-css">
-                            <div>
-                                <p>Fit</p>
-                            </div>
-                            <div>
-                                <p>Regular fit</p>
-                            </div>
-                        </div>
-
-                        <div className="fit-uspolo-shirt-div-css">
-                            <div>
-                                <p>Pattern</p>
-                            </div>
-                            <div>
-                                <p>Solid</p>
-                            </div>
-                        </div>
-
-                        <div className="more-information-product-uspolo-shirt">
-                            <div>
-                                <img src="https://www.tatacliq.com/src/pdp/components/img/moreProduct.svg" alt="" />
-                            </div>
-                            <div>
-                                <p><b>More Product Information</b></p>
-                                <p>Manufacturing, Packaging & Import info</p>
-                            </div>
-                            <p>
-                                &gt;
-                            </p>
-                        </div>
-
-                        <div className="uspolo-border-right-shirt-detail"></div>
-
-                        <h3 className='uspolo-shirt-available-offers'>Customers thought the product's fit was</h3>
-
-                        <div className='same-color-progress-bar-div-uspolo'>
-                            <div><p><b>As expected (88%)</b></p></div>
-                            <div>
-                                <div className="middle">
-                                    <div className="bar-container">
-                                        <div className="bar-5"></div>
-                                    </div>
+                            <div className="uspolo-shirt-images-bottom">
+                                <div className="uspolo-shirt-images-3">
+                                    <img src={singleproduct.image} alt="" />
+                                </div>
+                                <div className="uspolo-shirt-images-4">
+                                    <img src={singleproduct.image} alt="" />
+                                </div>
+                                <div className="uspolo-shirt-images-5">
+                                    <img src={singleproduct.image} alt="" />
                                 </div>
                             </div>
                         </div>
-
-                        <div className='same-color-progress-bar-div-uspolo'>
-                            <div><p style={{ color: "#4a4a4a" }}>To Tight(7%)</p></div>
-                            <div>
-                                <div className="middle">
-                                    <div className="bar-container">
-                                        <div className="bar-5-1"></div>
-                                    </div>
-                                </div>
+                        <div className="right-uspolo-shirt-detail">
+                            <div className="uspolo-popularity-div">
+                                <span><img src="https://www.tatacliq.com/src/assets/ProductNudgeIcons/Wishlisted.svg" alt="" /></span>
+                                <p>Popular: Recently wishlisted 66 times</p>
                             </div>
-                        </div>
 
-                        <div className='same-color-progress-bar-div-uspolo'>
-                            <div><p style={{ color: "#4a4a4a" }}>To loose(5%)</p></div>
-                            <div>
-                                <div className="middle">
-                                    <div className="bar-container">
-                                        <div className="bar-5-2"></div>
-                                    </div>
-                                </div>
+                            <h3>{singleproduct.name}</h3>
+
+                            <h3>MRP: {singleproduct.price} ₹</h3>
+                            <p>Inclusive of all taxes</p>
+
+                            <p>Use MENSEOSS coupon to get 10% off on cart value 1999/- and above.</p>
+
+                            <div className="uspolo-shirt-rating-div">
+                                <div><p>2.8 <span>&#9733;</span></p></div>
+                                <p><span><b>5</b></span> Ratings</p>
                             </div>
-                        </div>
 
-                        <div className="uspolo-border-right-shirt-detail"></div>
+                            <div className="uspolo-border-right-shirt-detail"></div>
 
-                        <h3 className='uspolo-shirt-available-offers'>From the Brand</h3>
 
-                        <div className="thigh-div-uspolo-shirt">
-                            <div>
+                            <div className='different-color-uspolo-shirt'>
                                 <div>
-                                    <div>
-                                        <img src="https://assets.tatacliq.com/medias/sys_master/images/34838208610334.png" alt="" />
-                                    </div>
-                                    <div>
-                                        <h3>U.S. Polo Assn.</h3>
-                                    </div>
-                                </div>
-                                <p>U.S. Polo Assn.</p>
-                                <button>Visit Store</button>
-                            </div>
-                        </div>
-
-                        <div className="uspolo-border-right-shirt-detail"></div>
-
-                        <div className="add-to-cart-button-wishlist-button">
-                            <div className="buyNow-wishlist-share">
-                                <div>
-                                    <img src="https://www.tatacliq.com/src/pdp/components/img/new-share-icon.svg" alt="" />
+                                    <img src={singleproduct.image} alt="" />
                                 </div>
                                 <div>
-                                    <div>
-                                        <img src="https://www.tatacliq.com/src/general/components/img/WL1.svg" alt="" />
-                                    </div>
-                                    <button>Buy Now</button>
+                                    <img src={singleproduct.image} alt="" />
                                 </div>
-                                <button>Add To Bag</button>
+                                <div>
+                                    <img src={singleproduct.image} alt="" />
+                                </div>
+                            </div>
+
+                            <div className="uspolo-border-right-shirt-detail"></div>
+
+                            <div className='select-size-uspolo-shirt'>
+                                <p><b>Select Size</b></p>
+                                <p><b>Size Guide</b></p>
+                            </div>
+
+                            <div className="different-sizes-uspolo-shirt">
+                                <div className="uspolo-shirts-for-all-sizes-css">
+                                    <p>S</p>
+                                </div>
+                                <div className="uspolo-shirts-for-all-sizes-css">
+                                    <p>M</p>
+                                </div>
+                                <div className="uspolo-shirts-for-all-sizes-css">
+                                    <p>L</p>
+                                </div>
+                                <div className="uspolo-shirts-for-all-sizes-css">
+                                    <p>XL</p>
+                                </div>
+                                <div className="uspolo-shirts-for-all-sizes-css">
+                                    <p>XXL</p>
+                                </div>
+                            </div>
+
+                            <p className='uspolo-model-cms-info'>Model is 6'0"/185 cms and is wearing an M size
+                                100% Cotton, Machine wash</p>
+
+                            <div className="uspolo-border-right-shirt-detail"></div>
+
+                            <h3 className='uspolo-shirt-available-offers'>Available Offers</h3>
+
+                            <div className="uspolo-bank-card-offers-css">
+                                <div>
+                                    <img src="https://assets.tatacliq.com/medias/sys_master/images/27678831411230.png" alt="" />
+                                </div>
+                                <div>
+                                    <p>10% Instant Discount on Kotak Bank Credit Cards only.</p>
+                                    <p>Min Purchase: ₹2500 | Max Discount: ₹1000 <span>more</span></p>
+                                </div>
+                            </div>
+
+                            <div className="uspolo-bank-card-offers-css">
+                                <div>
+                                    <img src="https://assets.tatacliq.com/medias/sys_master/images/27678831280158.png" alt="" />
+                                </div>
+                                <div>
+                                    <p>15% off on ICICI Credit Cards</p>
+                                    <p>Use Code: ICICIWEEKEND | Min Purchase: ₹1500 <span>more</span></p>
+                                </div>
+                            </div>
+
+                            <div className="uspolo-bank-card-offers-css">
+                                <div>
+                                    <img src="https://assets.tatacliq.com/medias/sys_master/images/27678831280158.png" alt="" />
+                                </div>
+                                <div>
+                                    <p>15% off on ICICI Netbanking</p>
+                                    <p>Use Code: ICICINB | Min Purchase: ₹2000 <span>more</span></p>
+                                </div>
+                            </div>
+
+                            <p className='uspolo-see-more-offers-shirt'><b>See 5 More Offers</b></p>
+                            <div className="uspolo-border-right-shirt-detail"></div>
+
+                            <h3 className='uspolo-shirt-available-offers'>Ship to</h3>
+
+                            <div className="show-pincode-delhi">
+                                <input type="text" value={addpincode} />
+                                <p>Change Pincode</p>
+                            </div>
+
+                            <div className="delivery-uspolo-shirt--main-div">
+                                <div>
+                                    <img src="https://www.tatacliq.com/src/general/components/img/deliveryIcon.svg" alt="" />
+                                </div>
+                                <div>
+                                    <p>Delivery by <span><b> 13th Jul</b></span></p>
+                                </div>
+                            </div>
+
+                            <div className="delivery-uspolo-shirt--main-div">
+                                <div>
+                                    <img src="https://www.tatacliq.com/src/general/components/img/cod.svg" alt="" />
+                                </div>
+                                <div>
+                                    <p><span><b> Cash on Delivery |</b></span> <span style={{ color: "#338715" }}><b>Available</b></span></p>
+                                </div>
+                            </div>
+
+                            <div className="delivery-uspolo-shirt--main-div">
+                                <div>
+                                    <img src="https://www.tatacliq.com/src/general/components/img/returnReplacementIcon.svg" alt="" />
+                                </div>
+                                <div>
+                                    <p><span><b>10 Days Easy Return |</b></span><span style={{ color: "#da1c5c" }}><b> Know More</b></span></p>
+                                </div>
+                            </div>
+
+                            <div className="uspolo-soldBy-shirt">
+                                <p><b>Sold By 1 Arvind Life Style Brands Ltd</b></p>
+                                <p>&gt;</p>
+                            </div>
+
+                            <div className="uspolo-border-right-shirt-detail"></div>
+
+                            <h3 className='uspolo-shirt-available-offers'>Product Details</h3>
+
+                            <p style={{ color: "#4a4a4a", fontSize: "15px" }}>Refresh your wardrobe this new season with flavors of latest global
+                                fashion in this uber stylish dark green shirt from the latest range
+                                of the iconic U.S. Polo Assn.</p>
+
+                            <div className="fit-uspolo-shirt-div-css">
+                                <div>
+                                    <p>Fit</p>
+                                </div>
+                                <div>
+                                    <p>Regular fit</p>
+                                </div>
+                            </div>
+
+                            <div className="fit-uspolo-shirt-div-css">
+                                <div>
+                                    <p>Pattern</p>
+                                </div>
+                                <div>
+                                    <p>Solid</p>
+                                </div>
+                            </div>
+
+                            <div className="more-information-product-uspolo-shirt">
+                                <div>
+                                    <img src="https://www.tatacliq.com/src/pdp/components/img/moreProduct.svg" alt="" />
+                                </div>
+                                <div>
+                                    <p><b>More Product Information</b></p>
+                                    <p>Manufacturing, Packaging & Import info</p>
+                                </div>
+                                <p>
+                                    &gt;
+                                </p>
+                            </div>
+
+                            <div className="uspolo-border-right-shirt-detail"></div>
+
+                            <h3 className='uspolo-shirt-available-offers'>Customers thought the product's fit was</h3>
+
+                            <div className='same-color-progress-bar-div-uspolo'>
+                                <div><p><b>As expected (88%)</b></p></div>
+                                <div>
+                                    <div className="middle">
+                                        <div className="bar-container">
+                                            <div className="bar-5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='same-color-progress-bar-div-uspolo'>
+                                <div><p style={{ color: "#4a4a4a" }}>To Tight(7%)</p></div>
+                                <div>
+                                    <div className="middle">
+                                        <div className="bar-container">
+                                            <div className="bar-5-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='same-color-progress-bar-div-uspolo'>
+                                <div><p style={{ color: "#4a4a4a" }}>To loose(5%)</p></div>
+                                <div>
+                                    <div className="middle">
+                                        <div className="bar-container">
+                                            <div className="bar-5-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* <div className="uspolo-border-right-shirt-detail"></div> */}
+
+                            {/* <h3 className='uspolo-shirt-available-offers'>From the Brand</h3> */}
+
+                            {/* <div className="thigh-div-uspolo-shirt">
+                                <div>
+                                    <div>
+                                        <div>
+                                            <img src="https://assets.tatacliq.com/medias/sys_master/images/34838208610334.png" alt="" />
+                                        </div>
+                                        <div>
+                                            <h3>U.S. Polo Assn.</h3>
+                                        </div>
+                                    </div>
+                                    <p>U.S. Polo Assn.</p>
+                                    <button>Visit Store</button>
+                                </div>
+                            </div> */}
+
+                            <div className="uspolo-border-right-shirt-detail"></div>
+
+                            <div className="add-to-cart-button-wishlist-button">
+                                <div className="buyNow-wishlist-share">
+                                    <div>
+                                        <img src="https://www.tatacliq.com/src/pdp/components/img/new-share-icon.svg" alt="" />
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="https://www.tatacliq.com/src/general/components/img/WL1.svg" alt="" />
+                                        </div>
+                                        {userdata?.role == "Seller" && <button className='button-single-product' onClick={()=>redirect(singleproduct.id)}>Update product</button>}
+                                    </div>
+                                    <button onClick={cartProduct}>Add To Bag</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </>}
                 </div>
 
                 <div className="bottom-style-with-div">

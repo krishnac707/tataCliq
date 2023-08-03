@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.add-product-body-main{
+    width: 100%;
+    padding-top: 120px;
+}
+
+.add-product-inside-body{
+    width: 25%;
+    border: 1px solid grey;
+    border-radius: 8px;
+    margin-bottom: 5%;
+    margin-left: 38%;
+    padding: 3%;
+    text-align: center;
+}
+
+.add-product-inside-body>h3{
+    margin-bottom: 3%;
+}
+
+.form-input-css{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    margin-bottom: 5%;
+}
