@@ -1,13 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Register.css';
 import { useNavigate } from 'react-router-dom';
 import { DataContext } from '../../context/Data.context';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../context/Auth.context';
+import axios from 'axios';
 
 const Register = () => {
     const { setLoginSignup, setLoginButton, loginbutton, loginSignup } = useContext(DataContext);
-    const [dropdownmenu, setdropdownmenu] = useState(false);
+    // const [dropdownmenu, setdropdownmenu] = useState(false);
     const [userData, setUserData] = useState({ name: "", email: "", password: "", role: 'Buyer' });
+    const { state, dispatch } = useContext(AuthContext)
     const router = useNavigate();
 
     const formValue = (event) => {
@@ -18,37 +21,37 @@ const Register = () => {
         setUserData({ ...userData, ["role"]: event.target.value })
     }
 
-    const formSubmit = (event) => {
+    const formSubmit = async (event) => {
         event.preventDefault();
-        if (userData.name && userData.email && userData.password) {
-            if (userData.role == "Buyer") {
-                const userArray = JSON.parse(localStorage.getItem("Users")) || [];
-                console.log(userArray, "24");
-                const userObj = {
-                    name: userData.name,
-                    email: userData.email,
-                    password: userData.password,
-                    role: userData.role,
-                    cart: []
+        if (userData.name && userData.email && userData.password && userData.confirmPassword && userData.role) {
+            if (userData.password === userData.confirmPassword) {
+                const response = await axios.post("http://localhost:8005/register", { userData })
+                if (response.data.success) {
+                    setUserData({ name: "", email: "", password: "", confirmPassword: "", role: "Buyer" })
+                    router("/login");
+                    toast.success(response.data.message);
+                    setLoginSignup(false);
+                    setLoginButton(true);
+
                 }
-                userArray.push(userObj);
-                localStorage.setItem("Users", JSON.stringify(userArray));
-                toast.success("Registration Successfull");
-                router("/login");
-                setLoginSignup(false);
+                else {
+                    toast.error(response.data.message)
+                }
             }
             else {
-                const users = JSON.parse(localStorage.getItem("Users")) || [];
-                users.push(userData);
-                localStorage.setItem("Users", JSON.stringify(users));
-                toast.success("Registration Successfull");
-                router("/login");
+                toast.error("Password and confirm password is not matched")
             }
         }
         else {
-            toast.error("please fill all data");
+            toast.error("All fields are mandatory")
         }
     }
+
+    useEffect(() => {
+        if (state?.user?.name) {
+            router('/')
+        }
+    }, [state])
 
     const handleSignup = () => {
         setLoginSignup(false);
@@ -69,6 +72,7 @@ const Register = () => {
                         <input type="text" className='login-form-input-css' name='name' onChange={formValue} placeholder='Enter Name' /><br />
                         <input type="email" className='login-form-input-css' name='email' onChange={formValue} placeholder='Enter Email' /><br />
                         <input type="password" className='login-form-input-css' name='password' onChange={formValue} placeholder='Enter Password' /><br />
+                        <input type="password" className='login-form-input-css' name='confirmPassword' onChange={formValue} placeholder='Confirm Password' /><br />
                         <select className='form-select-css' onChange={selectRole}>
                             <option value="Buyer">Buyer</option>
                             <option value="Seller">Seller</option>

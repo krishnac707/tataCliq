@@ -46,7 +46,7 @@ const AddProducts = () => {
             toast.error("Please login first");
             router('/login')
         }
-    }, [])
+    }, [])                          
 
     return (
         <div className='add-product-body-main'>

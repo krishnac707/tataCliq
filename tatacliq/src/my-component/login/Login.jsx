@@ -1,52 +1,57 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './../../context/Auth.context';
 import { useNavigate } from 'react-router-dom';
 import './Login.css'
 import { DataContext } from '../../context/Data.context';
 import { toast } from 'react-hot-toast';
+import axios from 'axios';
 
 const Login = () => {
   const {setLoginSignup, setLoginButton,loginbutton,loginSignup} = useContext(DataContext);
-  const [userdata, setuserdata] = useState({ email: "", password: "" });
-  const { state, login } = useContext(AuthContext);
-  console.log(state);
+  const [userData, setUserData] = useState({ email: "", password: "" });
+  const { state, dispatch } = useContext(AuthContext);
+  // console.log(state);
   const router = useNavigate();
 
 
   const formValue = (event) => {
-    setuserdata({ ...userdata, [event.target.name]: event.target.value });
-  }
-
-  const formSubmit = (event) => {
-    event.preventDefault();
-    if (userdata.email && userdata.password) {
-      const users = JSON.parse(localStorage.getItem("Users"));
-      var flag = false
-      for (var i = 0; i < users?.length; i++) {
-        if (users[i].email == userdata.email && users[i].password == userdata.password) {
-          flag = true
-          login(users[i]);
-          toast.success("login successfull");
-          router('/');
-          setuserdata({ email: "", password: "" })
-          setLoginButton(false)
-          break;
-        }
-      }
-
-      if (flag == false) {
-        toast.error("Your email or password is incorrect");
-      }
-    }
-    else {
-      toast.error("Please fill all details");
-    }
+    setUserData({ ...userData, [event.target.name]: event.target.value });
   }
 
   const handleSignup = () => {
     setLoginButton(false);
     setLoginSignup(true);
   }
+
+  const formSubmit = async (event) => {
+    event.preventDefault();
+    if (userData.email && userData.password) {
+      const response = await axios.post("http://localhost:8005/login", { userData })
+      if (response.data.success) {
+        dispatch({
+          type:"LOGIN",
+          payload:response.data.user
+        })
+        localStorage.setItem("tatacliqToken",JSON.stringify(response.data.token))
+        setUserData({ email: "", password: "" })
+        router("/");
+        setLoginButton(false)
+        toast.success(response.data.message);
+      }
+      else {
+        toast.error(response.data.message)
+      }
+    }
+    else {
+      toast.error("All fields are mandatory")
+    }
+  }
+
+  useEffect(() => {
+    if (state?.user?.name) {
+        router('/')
+    }
+}, [state])
 
   return loginbutton && 
     <div id='login-div-css'>
